@@ -50,14 +50,14 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	
 	@Override
 	public String getVersion() {
-		return "1.4.6-1";
+		return "1.4.7-1";
 	}
 
 	@Override
 	public String getName() {
 		return "fragileArmor";
 	}
-	
+
 	@Override
 	public void load() {
 		int armorindex;
@@ -65,7 +65,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			mc = ModLoader.getMinecraftInstance();
 		} catch (Error e) {
 		}
-
+		
 		if (ItemIDPaper > 0) {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("paper");
@@ -79,13 +79,13 @@ public class mod_IFA_fragileArmor extends BaseMod {
 				"XXX", "X X", Character.valueOf('X'), Item.paper
 			});
 			ModLoader.addRecipe(new ItemStack(platePaper), new Object[] {
-	            "X X", "XXX", "XXX", Character.valueOf('X'), Item.paper
+				"X X", "XXX", "XXX", Character.valueOf('X'), Item.paper
 			});
 			ModLoader.addRecipe(new ItemStack(legsPaper), new Object[] {
-	            "XXX", "X X", "X X", Character.valueOf('X'), Item.paper
+				"XXX", "X X", "X X", Character.valueOf('X'), Item.paper
 			});
 			ModLoader.addRecipe(new ItemStack(bootsPaper), new Object[] {
-	            "X X", "X X", Character.valueOf('X'), Item.paper
+				"X X", "X X", Character.valueOf('X'), Item.paper
 			});
 			// 名称変換テーブルの追加
 			ModLoader.addName(helmetPaper, "Paper Cap");
@@ -111,15 +111,15 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			});
 			IFA_ShapedRecipes.replaceLastRecipe();
 			ModLoader.addRecipe(new ItemStack(plateWool), new Object[] {
-	            "X X", "XXX", "XXX", Character.valueOf('X'), Block.cloth
+				"X X", "XXX", "XXX", Character.valueOf('X'), Block.cloth
 			});
 			IFA_ShapedRecipes.replaceLastRecipe();
 			ModLoader.addRecipe(new ItemStack(legsWool), new Object[] {
-	            "XXX", "X X", "X X", Character.valueOf('X'), Block.cloth
+				"XXX", "X X", "X X", Character.valueOf('X'), Block.cloth
 			});
 			IFA_ShapedRecipes.replaceLastRecipe();
 			ModLoader.addRecipe(new ItemStack(bootsWool), new Object[] {
-	            "X X", "X X", Character.valueOf('X'), Block.cloth
+				"X X", "X X", Character.valueOf('X'), Block.cloth
 			});
 			IFA_ShapedRecipes.replaceLastRecipe();
 			// 名称変換テーブルの追加
@@ -146,13 +146,13 @@ public class mod_IFA_fragileArmor extends BaseMod {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
 			});
 			ModLoader.addRecipe(new ItemStack(plateOak), new Object[] {
-	            "X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
+				"X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
 			});
 			ModLoader.addRecipe(new ItemStack(legsOak), new Object[] {
-	            "XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
+				"XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
 			});
 			ModLoader.addRecipe(new ItemStack(bootsOak), new Object[] {
-	            "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
+				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
 			});
 			// 名称変換テーブルの追加
 			ModLoader.addName(helmetOak, "Oak Helmet");
@@ -177,13 +177,13 @@ public class mod_IFA_fragileArmor extends BaseMod {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
 			});
 			ModLoader.addRecipe(new ItemStack(plateSpruce), new Object[] {
-	            "X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
+				"X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
 			});
 			ModLoader.addRecipe(new ItemStack(legsSpruce), new Object[] {
-	            "XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
+				"XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
 			});
 			ModLoader.addRecipe(new ItemStack(bootsSpruce), new Object[] {
-	            "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
+				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
 			});
 			// 名称変換テーブルの追加
 			ModLoader.addName(helmetSpruce, "Spruce Helmet");
@@ -208,13 +208,13 @@ public class mod_IFA_fragileArmor extends BaseMod {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
 			});
 			ModLoader.addRecipe(new ItemStack(plateBirch), new Object[] {
-	            "X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
+				"X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
 			});
 			ModLoader.addRecipe(new ItemStack(legsBirch), new Object[] {
-	            "XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
+				"XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
 			});
 			ModLoader.addRecipe(new ItemStack(bootsBirch), new Object[] {
-	            "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
+				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
 			});
 			// 名称変換テーブルの追加
 			ModLoader.addName(helmetBirch, "Birch Helmet");
@@ -239,13 +239,13 @@ public class mod_IFA_fragileArmor extends BaseMod {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
 			});
 			ModLoader.addRecipe(new ItemStack(plateJungle), new Object[] {
-	            "X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
+				"X X", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
 			});
 			ModLoader.addRecipe(new ItemStack(legsJungle), new Object[] {
-	            "XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
+				"XXX", "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
 			});
 			ModLoader.addRecipe(new ItemStack(bootsJungle), new Object[] {
-	            "X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
+				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
 			});
 			// 名称変換テーブルの追加
 			ModLoader.addName(helmetJungle, "Jungle Helmet");
