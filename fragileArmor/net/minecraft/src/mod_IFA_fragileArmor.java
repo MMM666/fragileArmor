@@ -17,6 +17,8 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	public static int ItemIDBirch = 22226;
 	@MLProp(info = "ItemID +0..+3(ShiftIndex = ItemID - 256, 0 is not use.)")
 	public static int ItemIDJungle = 22230;
+	@MLProp(info = "can use like a Fuel in Furnace.")
+	public static boolean isItemFuel = true;
 	
 	// 紙
 	public static Item helmetPaper;
@@ -70,10 +72,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("paper");
 			// アイテムの追加
-			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matPaper, 1)).setIconCoord(0, 0).setItemName("helmetPaper");
-			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matPaper, 1)).setIconCoord(0, 1).setItemName("chestplatePaper");
-			legsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matPaper, 1)).setIconCoord(0, 2).setItemName("leggingsPaper");
-			bootsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matPaper, 1)).setIconCoord(0, 3).setItemName("bootsPaper");
+			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matPaper, 1, 20)).setIconCoord(0, 0).setItemName("helmetPaper");
+			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matPaper, 1, 40)).setIconCoord(0, 1).setItemName("chestplatePaper");
+			legsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matPaper, 1, 30)).setIconCoord(0, 2).setItemName("leggingsPaper");
+			bootsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matPaper, 1, 20)).setIconCoord(0, 3).setItemName("bootsPaper");
 			// レシピの追加
 			ModLoader.addRecipe(new ItemStack(helmetPaper), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), Item.paper
@@ -101,10 +103,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("wool");
 			// アイテムの追加
-			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matWool, 2)).setIconCoord(0, 0).setItemName("helmetWool");
-			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matWool, 2)).setIconCoord(0, 1).setItemName("chestplateWool");
-			legsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matWool, 2)).setIconCoord(0, 2).setItemName("leggingsWool");
-			bootsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matWool, 2)).setIconCoord(0, 3).setItemName("bootsWool");
+			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matWool, 2, 70)).setIconCoord(0, 0).setItemName("helmetWool");
+			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matWool, 2, 140)).setIconCoord(0, 1).setItemName("chestplateWool");
+			legsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matWool, 2, 120)).setIconCoord(0, 2).setItemName("leggingsWool");
+			bootsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matWool, 2, 70)).setIconCoord(0, 3).setItemName("bootsWool");
 			// レシピの追加
 			ModLoader.addRecipe(new ItemStack(helmetWool), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), Block.cloth
@@ -137,10 +139,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("oak");
 			// アイテムの追加
-			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matOak, 4)).setIconCoord(2, 0).setItemName("helmetOak");
-			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matOak, 4)).setIconCoord(2, 1).setItemName("chestplateOak");
-			legsOak		= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matOak, 4)).setIconCoord(2, 2).setItemName("leggingsOak");
-			bootsOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matOak, 4)).setIconCoord(2, 3).setItemName("bootsOak");
+			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matOak, 4, 200)).setIconCoord(2, 0).setItemName("helmetOak");
+			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matOak, 4, 400)).setIconCoord(2, 1).setItemName("chestplateOak");
+			legsOak		= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matOak, 4, 300)).setIconCoord(2, 2).setItemName("leggingsOak");
+			bootsOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matOak, 4, 250)).setIconCoord(2, 3).setItemName("bootsOak");
 			// レシピの追加
 			ModLoader.addRecipe(new ItemStack(helmetOak), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
@@ -168,10 +170,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("spruce");
 			// アイテムの追加
-			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matSpruce, 4)).setIconCoord(2, 0).setItemName("helmetSpruce");
-			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matSpruce, 4)).setIconCoord(2, 1).setItemName("chestplateSpruce");
-			legsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matSpruce, 4)).setIconCoord(2, 2).setItemName("leggingsSpruce");
-			bootsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matSpruce, 4)).setIconCoord(2, 3).setItemName("bootsSpruce");
+			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matSpruce, 4, 200)).setIconCoord(2, 0).setItemName("helmetSpruce");
+			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matSpruce, 4, 400)).setIconCoord(2, 1).setItemName("chestplateSpruce");
+			legsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matSpruce, 4, 300)).setIconCoord(2, 2).setItemName("leggingsSpruce");
+			bootsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matSpruce, 4, 250)).setIconCoord(2, 3).setItemName("bootsSpruce");
 			// レシピの追加
 			ModLoader.addRecipe(new ItemStack(helmetSpruce), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
@@ -199,10 +201,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("birch");
 			// アイテムの追加
-			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matBirch, 4)).setIconCoord(2, 0).setItemName("helmetBrich");
-			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matBirch, 4)).setIconCoord(2, 1).setItemName("chestplateBrich");
-			legsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matBirch, 4)).setIconCoord(2, 2).setItemName("leggingsBrich");
-			bootsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matBirch, 4)).setIconCoord(2, 3).setItemName("bootsBrich");
+			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matBirch, 4, 200)).setIconCoord(2, 0).setItemName("helmetBrich");
+			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matBirch, 4, 400)).setIconCoord(2, 1).setItemName("chestplateBrich");
+			legsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matBirch, 4, 300)).setIconCoord(2, 2).setItemName("leggingsBrich");
+			bootsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matBirch, 4, 250)).setIconCoord(2, 3).setItemName("bootsBrich");
 			// レシピの追加
 			ModLoader.addRecipe(new ItemStack(helmetBirch), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
@@ -230,10 +232,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = mc == null ? 0 : ModLoader.addArmor("jungle");
 			// アイテムの追加
-			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matJungle, 4)).setIconCoord(2, 0).setItemName("helmetJungle");
-			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matJungle, 4)).setIconCoord(2, 1).setItemName("chestplateJungle");
-			legsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matJungle, 4)).setIconCoord(2, 2).setItemName("leggingsJungle");
-			bootsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matJungle, 4)).setIconCoord(2, 3).setItemName("bootsJungle");
+			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matJungle, 4, 200)).setIconCoord(2, 0).setItemName("helmetJungle");
+			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matJungle, 4, 400)).setIconCoord(2, 1).setItemName("chestplateJungle");
+			legsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matJungle, 4, 300)).setIconCoord(2, 2).setItemName("leggingsJungle");
+			bootsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matJungle, 4, 250)).setIconCoord(2, 3).setItemName("bootsJungle");
 			// レシピの追加
 			ModLoader.addRecipe(new ItemStack(helmetJungle), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
@@ -259,4 +261,13 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 	}
 
+	@Override
+	public int addFuel(int var1, int var2) {
+		// 燃焼時間
+		if (!isItemFuel || !(Item.itemsList[var1] instanceof IFA_ItemFragileArmor)) return 0;
+		int ltime = 0;
+		
+		return ((IFA_ItemFragileArmor)Item.itemsList[var1]).getFuelTime(var2);
+	}
+	
 }
