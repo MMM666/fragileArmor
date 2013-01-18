@@ -1,4 +1,4 @@
-package net.minecraft.src;
+ï»¿package net.minecraft.src;
 
 public class IFA_ItemFragileArmor extends ItemArmor {
 
@@ -20,24 +20,24 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	public IFA_ItemFragileArmor(int i, EnumArmorMaterial enumarmormaterial,
 			int j, int k, int material, int maxdamegeRate, int pFueltime) {
 		super(i, enumarmormaterial, j, k);
-		// “Æ©ƒ}ƒeƒŠƒAƒ‹‚Ì‹L‰¯
+		// ç‹¬è‡ªãƒãƒ†ãƒªã‚¢ãƒ«ã®è¨˜æ†¶
 		fragileMaterial = material;
-		// ƒA[ƒ}[‘Ï‹v‚Ìİ’èiŠvŠZŠî€j
+		// ã‚¢ãƒ¼ãƒãƒ¼è€ä¹…ã®è¨­å®šï¼ˆé©é§åŸºæº–ï¼‰
 		setMaxDamage(EnumArmorMaterial.CLOTH.getDurability(k) * maxdamegeRate / 5);
-		// •W€”RÄŠÔ
+		// æ¨™æº–ç‡ƒç„¼æ™‚é–“
 		fuelTime = pFueltime;
 	}
 
 	/**
-	 * ƒA[ƒ}[ƒJƒ‰[‚Ì•â³
+	 * ã‚¢ãƒ¼ãƒãƒ¼ã‚«ãƒ©ãƒ¼ã®è£œæ­£
 	 */
 	@Override
 	public int getColor(ItemStack par1ItemStack) {
 		if (fragileMaterial > 1) {
-			// †ƒA[ƒ}[
+			// ç´™ã‚¢ãƒ¼ãƒãƒ¼
 			return colorValues[fragileMaterial];
 		} else {
-			// –Ñ…‚Ì‚¨—m•
+			// æ¯›ç³¸ã®ãŠæ´‹æœ
 			NBTTagCompound var2 = par1ItemStack.getTagCompound();
 			
 			if (var2 == null) {
@@ -50,21 +50,21 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	}
 
 	/**
-	 * ‚¨ô‘ó
+	 * ãŠæ´—æ¿¯
 	 */
 	@Override
 	public void removeColor(ItemStack par1ItemStack) {
 		if (fragileMaterial == matWool) {
-			// F—‚¿Œƒ‚µ‚·
+			// è‰²è½ã¡æ¿€ã—ã™
 			super.removeColor(par1ItemStack);
 		} else if (fragileMaterial == matPaper) {
-			// †»•i‚Íô‚Á‚½‚çƒ_ƒ‚¾‚ëJK
+			// ç´™è£½å“ã¯æ´—ã£ãŸã‚‰ãƒ€ãƒ¡ã ã‚JK
 			par1ItemStack.setItemDamage(par1ItemStack.getMaxDamage() - 1);
 		}
 	}
 
 	/**
-	 * ‰¼‘z“I‚Éˆá‚¤‘fŞ‚ğ•Ô‚·‚±‚Æ‚Å•`‰æ‘Îô‚ğ‚·‚éB
+	 * ä»®æƒ³çš„ã«é•ã†ç´ æã‚’è¿”ã™ã“ã¨ã§æç”»å¯¾ç­–ã‚’ã™ã‚‹ã€‚
 	 */
 	@Override
 	public EnumArmorMaterial getArmorMaterial() {
@@ -72,14 +72,14 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	}
 
 	/**
-	 * C—‘fŞ‚Ì”»’è
+	 * ä¿®ç†ç´ æã®åˆ¤å®š
 	 */
 	@Override
 	public boolean getIsRepairable(ItemStack par1ItemStack,
 			ItemStack par2ItemStack) {
 		switch (fragileMaterial) {
 		case matPaper:
-			// †ƒA[ƒ}[
+			// ç´™ã‚¢ãƒ¼ãƒãƒ¼
 			if (par2ItemStack.itemID == Item.paper.itemID
 					|| par2ItemStack.getItem() instanceof ItemMapBase) {
 				return true;
@@ -120,7 +120,7 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	}
 
 	/**
-	 * 1.4.2‚©‚ç—v‚ç‚È‚­‚È‚Á‚½‚©H
+	 * 1.4.2ã‹ã‚‰è¦ã‚‰ãªããªã£ãŸã‹ï¼Ÿ
 	 */
 	@Override
 	public boolean requiresMultipleRenderPasses() {

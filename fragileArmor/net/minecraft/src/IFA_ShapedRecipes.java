@@ -1,14 +1,14 @@
-package net.minecraft.src;
+ï»¿package net.minecraft.src;
 
 import java.util.List;
 
 public class IFA_ShapedRecipes extends ShapedRecipes {
 
 	public static void replaceLastRecipe() {
-		// ÅŒã‚É’Ç‰Á‚³‚ê‚½ƒŒƒVƒs‚ğ’u‚«Š·‚¦‚éB
+		// æœ€å¾Œã«è¿½åŠ ã•ã‚ŒãŸãƒ¬ã‚·ãƒ”ã‚’ç½®ãæ›ãˆã‚‹ã€‚
 		List llist = CraftingManager.getInstance().getRecipeList();
 		if (llist.get(llist.size() - 1) instanceof ShapedRecipes) {
-			// ƒŒƒVƒs
+			// ãƒ¬ã‚·ãƒ”
 			ShapedRecipes lrecipe = (ShapedRecipes)llist.remove(llist.size() - 1);
 			try {
 				int lwidth	= (Integer)ModLoader.getPrivateValue(ShapedRecipes.class, lrecipe, 0);
@@ -50,7 +50,7 @@ public class IFA_ShapedRecipes extends ShapedRecipes {
 				lcount++;
 			}
 		}
-		// F‚ÌŠm’èAZo®‚ÍŠÛƒpƒNƒŠ
+		// è‰²ã®ç¢ºå®šã€ç®—å‡ºå¼ã¯ä¸¸ãƒ‘ã‚¯ãƒª
 		lcol[0] = lcoladd[0] / lcount;
 		lcol[1] = lcoladd[1] / lcount;
 		lcol[2] = lcoladd[2] / lcount;

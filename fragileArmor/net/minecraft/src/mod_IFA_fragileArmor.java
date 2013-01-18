@@ -1,4 +1,4 @@
-package net.minecraft.src;
+ï»¿package net.minecraft.src;
 
 import net.minecraft.client.Minecraft;
 
@@ -20,17 +20,17 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	@MLProp(info = "can use like a Fuel in Furnace.")
 	public static boolean isItemFuel = true;
 	
-	// †
+	// ç´™
 	public static Item helmetPaper;
 	public static Item platePaper;
 	public static Item legsPaper;
 	public static Item bootsPaper;
-	// –Ñ…
+	// æ¯›ç³¸
 	public static Item helmetWool;
 	public static Item plateWool;
 	public static Item legsWool;
 	public static Item bootsWool;
-	// –ØŞ
+	// æœ¨æ
 	public static Item helmetOak;
 	public static Item plateOak;
 	public static Item legsOak;
@@ -69,14 +69,14 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		
 		if (ItemIDPaper > 0) {
-			// ƒA[ƒ}[ƒeƒNƒXƒ`ƒƒ‚Ì“o˜^
+			// ã‚¢ãƒ¼ãƒãƒ¼ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç™»éŒ²
 			armorindex = mc == null ? 0 : ModLoader.addArmor("paper");
-			// ƒAƒCƒeƒ€‚Ì’Ç‰Á
+			// ã‚¢ã‚¤ãƒ†ãƒ ã®è¿½åŠ 
 			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matPaper, 1, 20)).setIconCoord(0, 0).setItemName("helmetPaper");
 			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matPaper, 1, 40)).setIconCoord(0, 1).setItemName("chestplatePaper");
 			legsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matPaper, 1, 30)).setIconCoord(0, 2).setItemName("leggingsPaper");
 			bootsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matPaper, 1, 20)).setIconCoord(0, 3).setItemName("bootsPaper");
-			// ƒŒƒVƒs‚Ì’Ç‰Á
+			// ãƒ¬ã‚·ãƒ”ã®è¿½åŠ 
 			ModLoader.addRecipe(new ItemStack(helmetPaper), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), Item.paper
 			});
@@ -89,25 +89,25 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			ModLoader.addRecipe(new ItemStack(bootsPaper), new Object[] {
 				"X X", "X X", Character.valueOf('X'), Item.paper
 			});
-			// –¼Ì•ÏŠ·ƒe[ƒuƒ‹‚Ì’Ç‰Á
+			// åç§°å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã®è¿½åŠ 
 			ModLoader.addName(helmetPaper, "Paper Cap");
 			ModLoader.addName(platePaper, "Paper Tunic");
 			ModLoader.addName(legsPaper, "Paper Pants");
 			ModLoader.addName(bootsPaper, "Paper Boots");
-			ModLoader.addName(helmetPaper, "ja_JP", "†‚Ì–Xq");
-			ModLoader.addName(platePaper, "ja_JP", "†‚Ìã’…");
-			ModLoader.addName(legsPaper, "ja_JP", "†‚Ì‚Ï‚ñ‚Â");
-			ModLoader.addName(bootsPaper, "ja_JP", "†‚ÌŒC");
+			ModLoader.addName(helmetPaper, "ja_JP", "ç´™ã®å¸½å­");
+			ModLoader.addName(platePaper, "ja_JP", "ç´™ã®ä¸Šç€");
+			ModLoader.addName(legsPaper, "ja_JP", "ç´™ã®ã±ã‚“ã¤");
+			ModLoader.addName(bootsPaper, "ja_JP", "ç´™ã®é´");
 		}
 		if (ItemIDWool > 0) {
-			// ƒA[ƒ}[ƒeƒNƒXƒ`ƒƒ‚Ì“o˜^
+			// ã‚¢ãƒ¼ãƒãƒ¼ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç™»éŒ²
 			armorindex = mc == null ? 0 : ModLoader.addArmor("wool");
-			// ƒAƒCƒeƒ€‚Ì’Ç‰Á
+			// ã‚¢ã‚¤ãƒ†ãƒ ã®è¿½åŠ 
 			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matWool, 2, 70)).setIconCoord(0, 0).setItemName("helmetWool");
 			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matWool, 2, 140)).setIconCoord(0, 1).setItemName("chestplateWool");
 			legsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matWool, 2, 120)).setIconCoord(0, 2).setItemName("leggingsWool");
 			bootsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matWool, 2, 70)).setIconCoord(0, 3).setItemName("bootsWool");
-			// ƒŒƒVƒs‚Ì’Ç‰Á
+			// ãƒ¬ã‚·ãƒ”ã®è¿½åŠ 
 			ModLoader.addRecipe(new ItemStack(helmetWool), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), Block.cloth
 			});
@@ -124,26 +124,26 @@ public class mod_IFA_fragileArmor extends BaseMod {
 				"X X", "X X", Character.valueOf('X'), Block.cloth
 			});
 			IFA_ShapedRecipes.replaceLastRecipe();
-			// –¼Ì•ÏŠ·ƒe[ƒuƒ‹‚Ì’Ç‰Á
+			// åç§°å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã®è¿½åŠ 
 			ModLoader.addName(helmetWool, "Wool Cap");
 			ModLoader.addName(plateWool, "Wool Tunic");
 			ModLoader.addName(legsWool, "Wool Pants");
 			ModLoader.addName(bootsWool, "Wool Boots");
-			ModLoader.addName(helmetWool, "ja_JP", "–Ñ…‚ÌƒjƒbƒgƒLƒƒƒbƒv");
-			ModLoader.addName(plateWool, "ja_JP", "–Ñ…‚ÌƒZ[ƒ^[");
-			ModLoader.addName(legsWool, "ja_JP", "–Ñ…‚ÌƒYƒ{ƒ“");
-			ModLoader.addName(bootsWool, "ja_JP", "–Ñ…‚Ìƒu[ƒc");
+			ModLoader.addName(helmetWool, "ja_JP", "æ¯›ç³¸ã®ãƒ‹ãƒƒãƒˆã‚­ãƒ£ãƒƒãƒ—");
+			ModLoader.addName(plateWool, "ja_JP", "æ¯›ç³¸ã®ã‚»ãƒ¼ã‚¿ãƒ¼");
+			ModLoader.addName(legsWool, "ja_JP", "æ¯›ç³¸ã®ã‚ºãƒœãƒ³");
+			ModLoader.addName(bootsWool, "ja_JP", "æ¯›ç³¸ã®ãƒ–ãƒ¼ãƒ„");
 		}
-		// è”²‚«AMOdlloader—ˆ‚½‚ç•Ï‚¦‚é‚©‚àH
+		// æ‰‹æŠœãã€MOdlloaderæ¥ãŸã‚‰å¤‰ãˆã‚‹ã‹ã‚‚ï¼Ÿ
 		if (ItemIDOak > 0) {
-			// ƒA[ƒ}[ƒeƒNƒXƒ`ƒƒ‚Ì“o˜^
+			// ã‚¢ãƒ¼ãƒãƒ¼ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç™»éŒ²
 			armorindex = mc == null ? 0 : ModLoader.addArmor("oak");
-			// ƒAƒCƒeƒ€‚Ì’Ç‰Á
+			// ã‚¢ã‚¤ãƒ†ãƒ ã®è¿½åŠ 
 			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matOak, 4, 200)).setIconCoord(2, 0).setItemName("helmetOak");
 			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matOak, 4, 400)).setIconCoord(2, 1).setItemName("chestplateOak");
 			legsOak		= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matOak, 4, 300)).setIconCoord(2, 2).setItemName("leggingsOak");
 			bootsOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matOak, 4, 250)).setIconCoord(2, 3).setItemName("bootsOak");
-			// ƒŒƒVƒs‚Ì’Ç‰Á
+			// ãƒ¬ã‚·ãƒ”ã®è¿½åŠ 
 			ModLoader.addRecipe(new ItemStack(helmetOak), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
 			});
@@ -156,25 +156,25 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			ModLoader.addRecipe(new ItemStack(bootsOak), new Object[] {
 				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 0)
 			});
-			// –¼Ì•ÏŠ·ƒe[ƒuƒ‹‚Ì’Ç‰Á
+			// åç§°å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã®è¿½åŠ 
 			ModLoader.addName(helmetOak, "Oak Helmet");
 			ModLoader.addName(plateOak, "Oak Chestplate");
 			ModLoader.addName(legsOak, "Oak Leggings");
 			ModLoader.addName(bootsOak, "Oak Boots");
-			ModLoader.addName(helmetOak, "ja_JP", "“è‚ÌŠ•”«");
-			ModLoader.addName(plateOak, "ja_JP", "“è‚Ì“·");
-			ModLoader.addName(legsOak, "ja_JP", "“è‚Ì˜Î|");
-			ModLoader.addName(bootsOak, "ja_JP", "“è‚Ì‹rãJ");
+			ModLoader.addName(helmetOak, "ja_JP", "æ¥¢ã®å…œé‰¢");
+			ModLoader.addName(plateOak, "ja_JP", "æ¥¢ã®èƒ´");
+			ModLoader.addName(legsOak, "ja_JP", "æ¥¢ã®ä½©æ¥¯");
+			ModLoader.addName(bootsOak, "ja_JP", "æ¥¢ã®è„šçµ†");
 		}
 		if (ItemIDSpruce > 0) {
-			// ƒA[ƒ}[ƒeƒNƒXƒ`ƒƒ‚Ì“o˜^
+			// ã‚¢ãƒ¼ãƒãƒ¼ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç™»éŒ²
 			armorindex = mc == null ? 0 : ModLoader.addArmor("spruce");
-			// ƒAƒCƒeƒ€‚Ì’Ç‰Á
+			// ã‚¢ã‚¤ãƒ†ãƒ ã®è¿½åŠ 
 			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matSpruce, 4, 200)).setIconCoord(2, 0).setItemName("helmetSpruce");
 			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matSpruce, 4, 400)).setIconCoord(2, 1).setItemName("chestplateSpruce");
 			legsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matSpruce, 4, 300)).setIconCoord(2, 2).setItemName("leggingsSpruce");
 			bootsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matSpruce, 4, 250)).setIconCoord(2, 3).setItemName("bootsSpruce");
-			// ƒŒƒVƒs‚Ì’Ç‰Á
+			// ãƒ¬ã‚·ãƒ”ã®è¿½åŠ 
 			ModLoader.addRecipe(new ItemStack(helmetSpruce), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
 			});
@@ -187,25 +187,25 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			ModLoader.addRecipe(new ItemStack(bootsSpruce), new Object[] {
 				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 1)
 			});
-			// –¼Ì•ÏŠ·ƒe[ƒuƒ‹‚Ì’Ç‰Á
+			// åç§°å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã®è¿½åŠ 
 			ModLoader.addName(helmetSpruce, "Spruce Helmet");
 			ModLoader.addName(plateSpruce, "Spruce Chestplate");
 			ModLoader.addName(legsSpruce, "Spruce Leggings");
 			ModLoader.addName(bootsSpruce, "Spruce Boots");
-			ModLoader.addName(helmetSpruce, "ja_JP", "¼‚ÌŠ•”«");
-			ModLoader.addName(plateSpruce, "ja_JP", "¼‚Ì“·");
-			ModLoader.addName(legsSpruce, "ja_JP", "¼‚Ì˜Î|");
-			ModLoader.addName(bootsSpruce, "ja_JP", "¼‚Ì‹rãJ");
+			ModLoader.addName(helmetSpruce, "ja_JP", "æ¾ã®å…œé‰¢");
+			ModLoader.addName(plateSpruce, "ja_JP", "æ¾ã®èƒ´");
+			ModLoader.addName(legsSpruce, "ja_JP", "æ¾ã®ä½©æ¥¯");
+			ModLoader.addName(bootsSpruce, "ja_JP", "æ¾ã®è„šçµ†");
 		}
 		if (ItemIDBirch > 0) {
-			// ƒA[ƒ}[ƒeƒNƒXƒ`ƒƒ‚Ì“o˜^
+			// ã‚¢ãƒ¼ãƒãƒ¼ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç™»éŒ²
 			armorindex = mc == null ? 0 : ModLoader.addArmor("birch");
-			// ƒAƒCƒeƒ€‚Ì’Ç‰Á
+			// ã‚¢ã‚¤ãƒ†ãƒ ã®è¿½åŠ 
 			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matBirch, 4, 200)).setIconCoord(2, 0).setItemName("helmetBrich");
 			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matBirch, 4, 400)).setIconCoord(2, 1).setItemName("chestplateBrich");
 			legsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matBirch, 4, 300)).setIconCoord(2, 2).setItemName("leggingsBrich");
 			bootsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matBirch, 4, 250)).setIconCoord(2, 3).setItemName("bootsBrich");
-			// ƒŒƒVƒs‚Ì’Ç‰Á
+			// ãƒ¬ã‚·ãƒ”ã®è¿½åŠ 
 			ModLoader.addRecipe(new ItemStack(helmetBirch), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
 			});
@@ -218,25 +218,25 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			ModLoader.addRecipe(new ItemStack(bootsBirch), new Object[] {
 				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 2)
 			});
-			// –¼Ì•ÏŠ·ƒe[ƒuƒ‹‚Ì’Ç‰Á
+			// åç§°å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã®è¿½åŠ 
 			ModLoader.addName(helmetBirch, "Birch Helmet");
 			ModLoader.addName(plateBirch, "Birch Chestplate");
 			ModLoader.addName(legsBirch, "Birch Leggings");
 			ModLoader.addName(bootsBirch, "Birch Boots");
-			ModLoader.addName(helmetBirch, "ja_JP", "”’Š’‚ÌŠ•”«");
-			ModLoader.addName(plateBirch, "ja_JP", "”’Š’‚Ì“·");
-			ModLoader.addName(legsBirch, "ja_JP", "”’Š’‚Ì˜Î|");
-			ModLoader.addName(bootsBirch, "ja_JP", "”’Š’‚Ì‹rãJ");
+			ModLoader.addName(helmetBirch, "ja_JP", "ç™½æ¨ºã®å…œé‰¢");
+			ModLoader.addName(plateBirch, "ja_JP", "ç™½æ¨ºã®èƒ´");
+			ModLoader.addName(legsBirch, "ja_JP", "ç™½æ¨ºã®ä½©æ¥¯");
+			ModLoader.addName(bootsBirch, "ja_JP", "ç™½æ¨ºã®è„šçµ†");
 		}
 		if (ItemIDJungle > 0) {
-			// ƒA[ƒ}[ƒeƒNƒXƒ`ƒƒ‚Ì“o˜^
+			// ã‚¢ãƒ¼ãƒãƒ¼ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç™»éŒ²
 			armorindex = mc == null ? 0 : ModLoader.addArmor("jungle");
-			// ƒAƒCƒeƒ€‚Ì’Ç‰Á
+			// ã‚¢ã‚¤ãƒ†ãƒ ã®è¿½åŠ 
 			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matJungle, 4, 200)).setIconCoord(2, 0).setItemName("helmetJungle");
 			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matJungle, 4, 400)).setIconCoord(2, 1).setItemName("chestplateJungle");
 			legsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 2, EnumArmorMaterial.CLOTH, armorindex, 2, IFA_ItemFragileArmor.matJungle, 4, 300)).setIconCoord(2, 2).setItemName("leggingsJungle");
 			bootsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 3, EnumArmorMaterial.CLOTH, armorindex, 3, IFA_ItemFragileArmor.matJungle, 4, 250)).setIconCoord(2, 3).setItemName("bootsJungle");
-			// ƒŒƒVƒs‚Ì’Ç‰Á
+			// ãƒ¬ã‚·ãƒ”ã®è¿½åŠ 
 			ModLoader.addRecipe(new ItemStack(helmetJungle), new Object[] {
 				"XXX", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
 			});
@@ -249,21 +249,21 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			ModLoader.addRecipe(new ItemStack(bootsJungle), new Object[] {
 				"X X", "X X", Character.valueOf('X'), new ItemStack(Block.planks, 1, 3)
 			});
-			// –¼Ì•ÏŠ·ƒe[ƒuƒ‹‚Ì’Ç‰Á
+			// åç§°å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã®è¿½åŠ 
 			ModLoader.addName(helmetJungle, "Jungle Helmet");
 			ModLoader.addName(plateJungle, "Jungle Chestplate");
 			ModLoader.addName(legsJungle, "Jungle Leggings");
 			ModLoader.addName(bootsJungle, "Jungle Boots");
-			ModLoader.addName(helmetJungle, "ja_JP", "‰Á‰Áˆ¢‚ÌŠ•”«");
-			ModLoader.addName(plateJungle, "ja_JP", "‰Á‰Áˆ¢‚Ì“·");
-			ModLoader.addName(legsJungle, "ja_JP", "‰Á‰Áˆ¢‚Ì˜Î|");
-			ModLoader.addName(bootsJungle, "ja_JP", "‰Á‰Áˆ¢‚Ì‹rãJ");
+			ModLoader.addName(helmetJungle, "ja_JP", "åŠ åŠ é˜¿ã®å…œé‰¢");
+			ModLoader.addName(plateJungle, "ja_JP", "åŠ åŠ é˜¿ã®èƒ´");
+			ModLoader.addName(legsJungle, "ja_JP", "åŠ åŠ é˜¿ã®ä½©æ¥¯");
+			ModLoader.addName(bootsJungle, "ja_JP", "åŠ åŠ é˜¿ã®è„šçµ†");
 		}
 	}
 
 	@Override
 	public int addFuel(int var1, int var2) {
-		// ”RÄŠÔ
+		// ç‡ƒç„¼æ™‚é–“
 		if (!isItemFuel || !(Item.itemsList[var1] instanceof IFA_ItemFragileArmor)) return 0;
 		int ltime = 0;
 		
