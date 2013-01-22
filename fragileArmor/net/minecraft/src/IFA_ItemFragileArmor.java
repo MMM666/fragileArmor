@@ -13,6 +13,9 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	public static final int colorValues[] = {
 		0xefefff, 0xdfdfaf, 0xbc9862, 0x805e36, 0xd7cb8d, 0xb88764 };
 
+	/**
+	 * 内部で使用する素材の保存値、エンチャ係数や素材基準の数値には反映されない。
+	 */
 	public int fragileMaterial;
 	public int fuelTime;
 
@@ -20,6 +23,7 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	public IFA_ItemFragileArmor(int i, EnumArmorMaterial enumarmormaterial,
 			int j, int k, int material, int maxdamegeRate, int pFueltime) {
 		super(i, enumarmormaterial, j, k);
+		// エンチャの係数やらを変えたい場合はenumarmormaterial引数の値をEnumArmorMaterialから選ぶ。
 		// 独自マテリアルの記憶
 		fragileMaterial = material;
 		// アーマー耐久の設定（革鎧基準）
@@ -65,6 +69,7 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 
 	/**
 	 * 仮想的に違う素材を返すことで描画対策をする。
+	 * 革のアーマーはアイコン合成になるため。
 	 */
 	@Override
 	public EnumArmorMaterial getArmorMaterial() {

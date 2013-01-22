@@ -4,6 +4,10 @@ import java.util.List;
 
 public class IFA_ShapedRecipes extends ShapedRecipes {
 
+	/**
+	 * レシピの解析部分を作るのが面倒だったので、
+	 * 作ったレシピから必要な部分をコピって成り代わるようにしている。
+	 */
 	public static void replaceLastRecipe() {
 		// 最後に追加されたレシピを置き換える。
 		List llist = CraftingManager.getInstance().getRecipeList();
@@ -28,6 +32,9 @@ public class IFA_ShapedRecipes extends ShapedRecipes {
 		super(par1, par2, par3ArrayOfItemStack, par4ItemStack);
 	}
 
+	/**
+	 * 色の計算部分の実装。
+	 */
 	@Override
 	public ItemStack getCraftingResult(InventoryCrafting par1InventoryCrafting) {
 		ItemStack lresult = super.getCraftingResult(par1InventoryCrafting);
