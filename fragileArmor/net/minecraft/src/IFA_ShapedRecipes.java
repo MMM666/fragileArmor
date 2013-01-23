@@ -1,18 +1,18 @@
-ï»¿package net.minecraft.src;
+package net.minecraft.src;
 
 import java.util.List;
 
 public class IFA_ShapedRecipes extends ShapedRecipes {
 
 	/**
-	 * ãƒ¬ã‚·ãƒ”ã®è§£æéƒ¨åˆ†ã‚’ä½œã‚‹ã®ãŒé¢å€’ã ã£ãŸã®ã§ã€
-	 * ä½œã£ãŸãƒ¬ã‚·ãƒ”ã‹ã‚‰å¿…è¦ãªéƒ¨åˆ†ã‚’ã‚³ãƒ”ã£ã¦æˆã‚Šä»£ã‚ã‚‹ã‚ˆã†ã«ã—ã¦ã„ã‚‹ã€‚
+	 * ƒŒƒVƒs‚Ì‰ğÍ•”•ª‚ğì‚é‚Ì‚ª–Ê“|‚¾‚Á‚½‚Ì‚ÅA
+	 * ì‚Á‚½ƒŒƒVƒs‚©‚ç•K—v‚È•”•ª‚ğƒRƒs‚Á‚Ä¬‚è‘ã‚í‚é‚æ‚¤‚É‚µ‚Ä‚¢‚éB
 	 */
 	public static void replaceLastRecipe() {
-		// æœ€å¾Œã«è¿½åŠ ã•ã‚ŒãŸãƒ¬ã‚·ãƒ”ã‚’ç½®ãæ›ãˆã‚‹ã€‚
+		// ÅŒã‚É’Ç‰Á‚³‚ê‚½ƒŒƒVƒs‚ğ’u‚«Š·‚¦‚éB
 		List llist = CraftingManager.getInstance().getRecipeList();
 		if (llist.get(llist.size() - 1) instanceof ShapedRecipes) {
-			// ãƒ¬ã‚·ãƒ”
+			// ƒŒƒVƒs
 			ShapedRecipes lrecipe = (ShapedRecipes)llist.remove(llist.size() - 1);
 			try {
 				int lwidth	= (Integer)ModLoader.getPrivateValue(ShapedRecipes.class, lrecipe, 0);
@@ -33,7 +33,7 @@ public class IFA_ShapedRecipes extends ShapedRecipes {
 	}
 
 	/**
-	 * è‰²ã®è¨ˆç®—éƒ¨åˆ†ã®å®Ÿè£…ã€‚
+	 * F‚ÌŒvZ•”•ª‚ÌÀ‘•B
 	 */
 	@Override
 	public ItemStack getCraftingResult(InventoryCrafting par1InventoryCrafting) {
@@ -57,7 +57,7 @@ public class IFA_ShapedRecipes extends ShapedRecipes {
 				lcount++;
 			}
 		}
-		// è‰²ã®ç¢ºå®šã€ç®—å‡ºå¼ã¯ä¸¸ãƒ‘ã‚¯ãƒª
+		// F‚ÌŠm’èAZo®‚ÍŠÛƒpƒNƒŠ
 		lcol[0] = lcoladd[0] / lcount;
 		lcol[1] = lcoladd[1] / lcount;
 		lcol[2] = lcoladd[2] / lcount;
