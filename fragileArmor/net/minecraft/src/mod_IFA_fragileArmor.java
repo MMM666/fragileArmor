@@ -19,6 +19,8 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	public static int ItemIDJungle = 22230;
 	@MLProp(info = "can use like a Fuel in Furnace.")
 	public static boolean isItemFuel = true;
+	@MLProp(info = "ItemID(ShiftIndex = ItemID - 256, 0 is not use.)")
+	public static int ItemIDBucket = 22234;
 	
 	// 紙
 	public static Item helmetPaper;
@@ -47,12 +49,14 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	public static Item plateJungle;
 	public static Item legsJungle;
 	public static Item bootsJungle;
-	public static Minecraft mc = null;
-	
-	
+	// バケツ
+	public static Item bucketDamaged;
+
+
+
 	@Override
 	public String getVersion() {
-		return "1.4.7-1";
+		return "1.4.7-2";
 	}
 
 	@Override
@@ -61,16 +65,16 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	}
 
 	@Override
+	public String getPriorities() {
+		return "required-after:mod_MMM_MMMLib";
+	}
+
+	@Override
 	public void load() {
 		int armorindex;
-		try {
-			mc = ModLoader.getMinecraftInstance();
-		} catch (Error e) {
-		}
-		
 		if (ItemIDPaper > 0) {
 			// アーマーテクスチャの登録
-			armorindex = mc == null ? 0 : ModLoader.addArmor("paper");
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("paper");
 			// アイテムの追加
 			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matPaper, 1, 20)).setIconCoord(0, 0).setItemName("helmetPaper");
 			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matPaper, 1, 40)).setIconCoord(0, 1).setItemName("chestplatePaper");
@@ -101,7 +105,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDWool > 0) {
 			// アーマーテクスチャの登録
-			armorindex = mc == null ? 0 : ModLoader.addArmor("wool");
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("wool");
 			// アイテムの追加
 			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matWool, 2, 70)).setIconCoord(0, 0).setItemName("helmetWool");
 			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matWool, 2, 140)).setIconCoord(0, 1).setItemName("chestplateWool");
@@ -137,7 +141,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		// 手抜き、MOdlloader来たら変えるかも？
 		if (ItemIDOak > 0) {
 			// アーマーテクスチャの登録
-			armorindex = mc == null ? 0 : ModLoader.addArmor("oak");
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("oak");
 			// アイテムの追加
 			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matOak, 4, 200)).setIconCoord(2, 0).setItemName("helmetOak");
 			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matOak, 4, 400)).setIconCoord(2, 1).setItemName("chestplateOak");
@@ -168,7 +172,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDSpruce > 0) {
 			// アーマーテクスチャの登録
-			armorindex = mc == null ? 0 : ModLoader.addArmor("spruce");
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("spruce");
 			// アイテムの追加
 			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matSpruce, 4, 200)).setIconCoord(2, 0).setItemName("helmetSpruce");
 			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matSpruce, 4, 400)).setIconCoord(2, 1).setItemName("chestplateSpruce");
@@ -199,7 +203,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDBirch > 0) {
 			// アーマーテクスチャの登録
-			armorindex = mc == null ? 0 : ModLoader.addArmor("birch");
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("birch");
 			// アイテムの追加
 			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matBirch, 4, 200)).setIconCoord(2, 0).setItemName("helmetBrich");
 			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matBirch, 4, 400)).setIconCoord(2, 1).setItemName("chestplateBrich");
@@ -230,7 +234,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDJungle > 0) {
 			// アーマーテクスチャの登録
-			armorindex = mc == null ? 0 : ModLoader.addArmor("jungle");
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("jungle");
 			// アイテムの追加
 			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, EnumArmorMaterial.CLOTH, armorindex, 0, IFA_ItemFragileArmor.matJungle, 4, 200)).setIconCoord(2, 0).setItemName("helmetJungle");
 			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, EnumArmorMaterial.CLOTH, armorindex, 1, IFA_ItemFragileArmor.matJungle, 4, 400)).setIconCoord(2, 1).setItemName("chestplateJungle");
@@ -259,6 +263,19 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			ModLoader.addName(legsJungle, "ja_JP", "加加阿の佩楯");
 			ModLoader.addName(bootsJungle, "ja_JP", "加加阿の脚絆");
 		}
+		
+		if (ItemIDBucket > 0) {
+			// かぶれるバケツ
+			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("bucket");
+			Item.itemsList[69 + 256] = null;
+//			Item.itemsList[70] = null;
+//			Item.itemsList[71] = null;
+			bucketDamaged = (new IFA_ItemBucket(ItemIDBucket - 256, EnumArmorMaterial.IRON, armorindex, 0, Item.bucketEmpty)).setIconCoord(10, 4).setItemName("bucket").setMaxStackSize(16);
+			Item.bucketEmpty = (new IFA_ItemBucket(69, EnumArmorMaterial.IRON, armorindex, 0, Item.bucketEmpty)).setIconCoord(10, 4).setItemName("bucket").setMaxStackSize(16);
+//			Item.bucketWater = (new XEU_ItemBucketProxy(70, Block.waterMoving.blockID)).setIconCoord(11, 4).setItemName("bucketWater").setContainerItem(Item.bucketEmpty).setMaxDamage(Item.bucketEmpty.getMaxDamage());
+//			Item.bucketLava	 = (new XEU_ItemBucketProxy(71, Block.lavaMoving.blockID)).setIconCoord(12, 4).setItemName("bucketLava").setContainerItem(Item.bucketEmpty).setMaxDamage(Item.bucketEmpty.getMaxDamage());
+		}
+		
 	}
 
 	@Override
