@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
 public class IFA_ItemFragileArmor extends ItemArmor {
-
+/*
 	public static final int matPaper = 0;
 	public static final int matWool = 1;
 	public static final int matOak = 2;
@@ -12,59 +12,42 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 		"paper", "wool", "oak", "spruce", "birch", "jungle" };
 	public static final int colorValues[] = {
 		0xefefff, 0xdfdfaf, 0xbc9862, 0x805e36, 0xd7cb8d, 0xb88764 };
-
+*/
 	/**
 	 * 内部で使用する素材の保存値、エンチャ係数や素材基準の数値には反映されない。
 	 */
-	public int fragileMaterial;
+	public IFA_EnumArmorMaterial fragileMaterial;
 	public int fuelTime;
+	protected Icon ficonBK;
+	protected String funnlocalizedName;
 
 	// Method
-	public IFA_ItemFragileArmor(int i, EnumArmorMaterial enumarmormaterial,
-			int j, int k, int material, int maxdamegeRate, int pFueltime) {
-		super(i, enumarmormaterial, j, k);
+	public IFA_ItemFragileArmor(int i, IFA_EnumArmorMaterial pMaterial,
+			int j, int k, int pFueltime) {
+		super(i, pMaterial.getBaseMaterial(), j, k);
 		// エンチャの係数やらを変えたい場合はenumarmormaterial引数の値をEnumArmorMaterialから選ぶ。
 		// 独自マテリアルの記憶
-		fragileMaterial = material;
-		// アーマー耐久の設定（革鎧基準）
-		setMaxDamage(EnumArmorMaterial.CLOTH.getDurability(k) * maxdamegeRate / 5);
+		fragileMaterial = pMaterial;
+		// アーマー耐久の設定
+		setMaxDamage(pMaterial.getDurability(k));
 		// 標準燃焼時間
 		fuelTime = pFueltime;
 	}
 
-	/**
-	 * アーマーカラーの補正
-	 */
 	@Override
-	public int getColor(ItemStack par1ItemStack) {
-		if (fragileMaterial > 1) {
-			// 紙アーマー
-			return colorValues[fragileMaterial];
-		} else {
-			// 毛糸のお洋服
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
-			
-			if (var2 == null) {
-				return 0xffffff;
-			} else {
-				NBTTagCompound var3 = var2.getCompoundTag("display");
-				return var3 == null ? 0xffffff : (var3.hasKey("color") ? var3.getInteger("color") : 0xffffff);
-			}
-		}
+	public Item setUnlocalizedName(String par1Str) {
+		funnlocalizedName = par1Str;
+		return super.setUnlocalizedName(par1Str);
 	}
 
-	/**
-	 * お洗濯
-	 */
 	@Override
-	public void removeColor(ItemStack par1ItemStack) {
-		if (fragileMaterial == matWool) {
-			// 色落ち激しす
-			super.removeColor(par1ItemStack);
-		} else if (fragileMaterial == matPaper) {
-			// 紙製品は洗ったらダメだろJK
-			par1ItemStack.setItemDamage(par1ItemStack.getMaxDamage() - 1);
-		}
+	public boolean requiresMultipleRenderPasses() {
+		return fragileMaterial.isColored();
+	}
+
+	@Override
+	public int getItemEnchantability() {
+		return fragileMaterial.getEnchantability();
 	}
 
 	/**
@@ -73,7 +56,49 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	 */
 	@Override
 	public EnumArmorMaterial getArmorMaterial() {
-		return fragileMaterial > 1 ? EnumArmorMaterial.CHAIN : EnumArmorMaterial.CLOTH;
+		return fragileMaterial.isColored() ? EnumArmorMaterial.CLOTH : EnumArmorMaterial.CHAIN;
+	}
+
+	public boolean hasColor(ItemStack par1ItemStack) {
+		return !fragileMaterial.isColored() ? false : (!par1ItemStack.hasTagCompound() ? false : (!par1ItemStack.getTagCompound().hasKey("display") ? false : par1ItemStack.getTagCompound().getCompoundTag("display").hasKey("color")));
+	}
+
+	/**
+	 * アーマーカラーの補正
+	 */
+	@Override
+	public int getColor(ItemStack par1ItemStack) {
+		if (fragileMaterial.isColored()) {
+			// 合成着色料は使用しております
+			NBTTagCompound var2 = par1ItemStack.getTagCompound();
+			
+			if (var2 == null) {
+				return 0xffffff;
+			} else {
+				NBTTagCompound var3 = var2.getCompoundTag("display");
+				return var3 == null ? 0xffffff : (var3.hasKey("color") ? var3.getInteger("color") : 0xffffff);
+			}
+		} else {
+			return -1;
+		}
+	}
+
+	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
+		return par2 == 1 ? ficonBK : super.getIconFromDamageForRenderPass(par1, par2);
+	}
+
+	/**
+	 * お洗濯
+	 */
+	@Override
+	public void removeColor(ItemStack par1ItemStack) {
+		if (fragileMaterial == IFA_EnumArmorMaterial.WOOL) {
+			// 色落ち激しす
+			super.removeColor(par1ItemStack);
+		} else if (fragileMaterial == IFA_EnumArmorMaterial.PAPER) {
+			// 紙製品は洗ったらダメだろJK
+			par1ItemStack.setItemDamage(par1ItemStack.getMaxDamage() - 1);
+		}
 	}
 
 	/**
@@ -83,37 +108,37 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	public boolean getIsRepairable(ItemStack par1ItemStack,
 			ItemStack par2ItemStack) {
 		switch (fragileMaterial) {
-		case matPaper:
+		case PAPER:
 			// 紙アーマー
 			if (par2ItemStack.itemID == Item.paper.itemID
 					|| par2ItemStack.getItem() instanceof ItemMapBase) {
 				return true;
 			}
 			break;
-		case matWool:
+		case WOOL:
 			if (par2ItemStack.itemID == Block.cloth.blockID) {
 				return true;
 			}
 			break;
-		case matOak:
+		case OAK:
 			if (par2ItemStack.itemID == Block.planks.blockID
 					&& par2ItemStack.getItemDamage() == 0) {
 				return true;
 			}
 			break;
-		case matSpruce:
+		case SPRUCE:
 			if (par2ItemStack.itemID == Block.planks.blockID
 					&& par2ItemStack.getItemDamage() == 1) {
 				return true;
 			}
 			break;
-		case matBirch:
+		case BIRCH:
 			if (par2ItemStack.itemID == Block.planks.blockID
 					&& par2ItemStack.getItemDamage() == 2) {
 				return true;
 			}
 			break;
-		case matJungle:
+		case JUNGLE:
 			if (par2ItemStack.itemID == Block.planks.blockID
 					&& par2ItemStack.getItemDamage() == 3) {
 				return true;
@@ -125,11 +150,15 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	}
 
 	/**
-	 * 1.4.2から要らなくなったか？
+	 * アイコンを登録
 	 */
-	@Override
-	public boolean requiresMultipleRenderPasses() {
-		return false;
+	public void func_94581_a(IconRegister par1IconRegister) {
+		super.func_94581_a(par1IconRegister);
+		
+		if (fragileMaterial.isColored()) {
+			ficonBK = par1IconRegister.func_94245_a(funnlocalizedName + "_overlay");
+			
+		}
 	}
 
 	public void setFuelTime(int pFuelTIme) {
