@@ -152,14 +152,14 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	/**
 	 * ƒAƒCƒRƒ“‚ð“o˜^
 	 */
-	public void func_94581_a(IconRegister par1IconRegister) {
-		super.func_94581_a(par1IconRegister);
+	@Override
+	public void updateIcons(IconRegister par1IconRegister) {
+		super.updateIcons(par1IconRegister);
 		
 		if (fragileMaterial.isColored()) {
-			ficonBK = par1IconRegister.func_94245_a(funnlocalizedName + "_overlay");
-			
+			ficonBK = par1IconRegister.registerIcon(funnlocalizedName + "_overlay");
 		}
-	}
+	};
 
 	public void setFuelTime(int pFuelTIme) {
 		fuelTime = pFuelTIme;
