@@ -22,7 +22,7 @@ public class IFA_ItemBucket extends ItemArmor {
 			EntityPlayer par3EntityPlayer) {
 		int ldm = par1ItemStack.getItemDamage();
 		if (ldm > 0) return par1ItemStack;
-		return super.onItemRightClick(par1ItemStack, par2World, par3EntityPlayer);
+		return fbucket.onItemRightClick(par1ItemStack, par2World, par3EntityPlayer);
 /*
 		// 対策が思いつかないので下の判定は無効
 		if (ldm > (getMaxDamage() * 2 / 3)) {
@@ -42,7 +42,7 @@ public class IFA_ItemBucket extends ItemArmor {
 	@Override
 	public void onUpdate(ItemStack par1ItemStack, World par2World,
 			Entity par3Entity, int par4, boolean par5) {
-		super.onUpdate(par1ItemStack, par2World, par3Entity, par4, par5);
+		fbucket.onUpdate(par1ItemStack, par2World, par3Entity, par4, par5);
 		// ダメージ有りのものを別IDへ変える
 		if (par1ItemStack.getItemDamage() > 0) {
 			par1ItemStack.itemID = mod_IFA_fragileArmor.bucketDamaged.itemID;
