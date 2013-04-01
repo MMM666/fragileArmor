@@ -153,8 +153,8 @@ public class IFA_ItemFragileArmor extends ItemArmor {
 	 * ƒAƒCƒRƒ“‚ð“o˜^
 	 */
 	@Override
-	public void updateIcons(IconRegister par1IconRegister) {
-		super.updateIcons(par1IconRegister);
+	public void registerIcons(IconRegister par1IconRegister) {
+		super.registerIcons(par1IconRegister);
 		
 		if (fragileMaterial.isColored()) {
 			ficonBK = par1IconRegister.registerIcon(funnlocalizedName + "_overlay");
