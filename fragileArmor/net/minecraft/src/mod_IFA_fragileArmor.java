@@ -56,7 +56,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 
 	@Override
 	public String getVersion() {
-		return "1.5.1-2";
+		return "1.5.2-1";
 	}
 
 	@Override
@@ -65,16 +65,12 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	}
 
 	@Override
-	public String getPriorities() {
-		return "required-after:mod_MMM_MMMLib";
-	}
-
-	@Override
 	public void load() {
 		int armorindex;
+		boolean isClient = ModLoader.getMinecraftInstance() != null;
 		if (ItemIDPaper > 0) {
 			// アーマーテクスチャの登録
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("paper");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("paper");
 			// アイテムの追加
 			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, IFA_EnumArmorMaterial.PAPER, armorindex, 0, 20)).setUnlocalizedName("helmetPaper");
 			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, IFA_EnumArmorMaterial.PAPER, armorindex, 1, 40)).setUnlocalizedName("chestplatePaper");
@@ -94,7 +90,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDWool > 0) {
 			// アーマーテクスチャの登録
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("wool");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("wool");
 			// アイテムの追加
 			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, IFA_EnumArmorMaterial.WOOL, armorindex, 0,  70)).setUnlocalizedName("helmetWool");
 			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, IFA_EnumArmorMaterial.WOOL, armorindex, 1, 140)).setUnlocalizedName("chestplateWool");
@@ -115,7 +111,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		// 手抜き、MOdlloader来たら変えるかも？
 		if (ItemIDOak > 0) {
 			// アーマーテクスチャの登録
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("oak");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("oak");
 			// アイテムの追加
 			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, IFA_EnumArmorMaterial.OAK, armorindex, 0, 200)).setUnlocalizedName("helmetOak");
 			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, IFA_EnumArmorMaterial.OAK, armorindex, 1, 400)).setUnlocalizedName("chestplateOak");
@@ -135,7 +131,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDSpruce > 0) {
 			// アーマーテクスチャの登録
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("spruce");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("spruce");
 			// アイテムの追加
 			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, IFA_EnumArmorMaterial.SPRUCE, armorindex, 0, 200)).setUnlocalizedName("helmetSpruce");
 			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, IFA_EnumArmorMaterial.SPRUCE, armorindex, 1, 400)).setUnlocalizedName("chestplateSpruce");
@@ -155,7 +151,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDBirch > 0) {
 			// アーマーテクスチャの登録
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("birch");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("birch");
 			// アイテムの追加
 			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, IFA_EnumArmorMaterial.BIRCH, armorindex, 0, 200)).setUnlocalizedName("helmetBirch");
 			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, IFA_EnumArmorMaterial.BIRCH, armorindex, 1, 400)).setUnlocalizedName("chestplateBirch");
@@ -175,7 +171,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		}
 		if (ItemIDJungle > 0) {
 			// アーマーテクスチャの登録
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("jungle");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("jungle");
 			// アイテムの追加
 			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, IFA_EnumArmorMaterial.JUNGLE, armorindex, 0, 200)).setUnlocalizedName("helmetJungle");
 			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, IFA_EnumArmorMaterial.JUNGLE, armorindex, 1, 400)).setUnlocalizedName("chestplateJungle");
@@ -196,7 +192,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		
 		if (ItemIDBucket > 0) {
 			// かぶれるバケツ
-			armorindex = !MMM_Helper.isClient ? 0 : ModLoader.addArmor("bucket");
+			armorindex = !isClient ? 0 : ModLoader.addArmor("bucket");
 			Item.itemsList[69 + 256] = null;
 //			Item.itemsList[70] = null;
 //			Item.itemsList[71] = null;
