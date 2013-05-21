@@ -67,7 +67,12 @@ public class mod_IFA_fragileArmor extends BaseMod {
 	@Override
 	public void load() {
 		int armorindex;
-		boolean isClient = ModLoader.getMinecraftInstance() != null;
+		boolean isClient = false;
+		try {
+			isClient = ModLoader.getMinecraftInstance() != null;
+		} catch (Exception e) {
+		} catch (Error e) {
+		}
 		if (ItemIDPaper > 0) {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("paper");
