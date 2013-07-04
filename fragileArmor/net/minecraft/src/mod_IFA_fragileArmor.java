@@ -1,6 +1,5 @@
 package net.minecraft.src;
 
-import net.minecraft.client.Minecraft;
 
 public class mod_IFA_fragileArmor extends BaseMod {
 
@@ -56,7 +55,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 
 	@Override
 	public String getVersion() {
-		return "1.5.2-2";
+		return "1.6.1-1";
 	}
 
 	@Override
@@ -77,10 +76,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("paper");
 			// アイテムの追加
-			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, IFA_EnumArmorMaterial.PAPER, armorindex, 0, 20)).setUnlocalizedName("helmetPaper");
-			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, IFA_EnumArmorMaterial.PAPER, armorindex, 1, 40)).setUnlocalizedName("chestplatePaper");
-			legsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 2, IFA_EnumArmorMaterial.PAPER, armorindex, 2, 30)).setUnlocalizedName("leggingsPaper");
-			bootsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 3, IFA_EnumArmorMaterial.PAPER, armorindex, 3, 20)).setUnlocalizedName("bootsPaper");
+			helmetPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 0, IFA_EnumArmorMaterial.PAPER, armorindex, 0, 20)).setUnlocalizedName("helmetPaper").func_111206_d("helmetPaper");
+			platePaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 1, IFA_EnumArmorMaterial.PAPER, armorindex, 1, 40)).setUnlocalizedName("chestplatePaper").func_111206_d("chestplatePaper");
+			legsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 2, IFA_EnumArmorMaterial.PAPER, armorindex, 2, 30)).setUnlocalizedName("leggingsPaper").func_111206_d("leggingsPaper");
+			bootsPaper	= (new IFA_ItemFragileArmor(ItemIDPaper - 256 + 3, IFA_EnumArmorMaterial.PAPER, armorindex, 3, 20)).setUnlocalizedName("bootsPaper").func_111206_d("bootsPaper");
 			// レシピの追加
 			addRecipes(Item.paper, helmetPaper, platePaper, legsPaper, bootsPaper, false);
 			// 名称変換テーブルの追加
@@ -97,10 +96,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("wool");
 			// アイテムの追加
-			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, IFA_EnumArmorMaterial.WOOL, armorindex, 0,  70)).setUnlocalizedName("helmetWool");
-			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, IFA_EnumArmorMaterial.WOOL, armorindex, 1, 140)).setUnlocalizedName("chestplateWool");
-			legsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 2, IFA_EnumArmorMaterial.WOOL, armorindex, 2, 120)).setUnlocalizedName("leggingsWool");
-			bootsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 3, IFA_EnumArmorMaterial.WOOL, armorindex, 3,  70)).setUnlocalizedName("bootsWool");
+			helmetWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 0, IFA_EnumArmorMaterial.WOOL, armorindex, 0,  70)).setUnlocalizedName("helmetWool").func_111206_d("helmetWool");
+			plateWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 1, IFA_EnumArmorMaterial.WOOL, armorindex, 1, 140)).setUnlocalizedName("chestplateWool").func_111206_d("chestplateWool");
+			legsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 2, IFA_EnumArmorMaterial.WOOL, armorindex, 2, 120)).setUnlocalizedName("leggingsWool").func_111206_d("leggingsWool");
+			bootsWool	= (new IFA_ItemFragileArmor(ItemIDWool - 256 + 3, IFA_EnumArmorMaterial.WOOL, armorindex, 3,  70)).setUnlocalizedName("bootsWool").func_111206_d("bootsWool");
 			// レシピの追加
 			addRecipes(Block.cloth, helmetWool, plateWool, legsWool, bootsWool, true);
 			// 名称変換テーブルの追加
@@ -118,10 +117,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("oak");
 			// アイテムの追加
-			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, IFA_EnumArmorMaterial.OAK, armorindex, 0, 200)).setUnlocalizedName("helmetOak");
-			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, IFA_EnumArmorMaterial.OAK, armorindex, 1, 400)).setUnlocalizedName("chestplateOak");
-			legsOak		= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 2, IFA_EnumArmorMaterial.OAK, armorindex, 2, 300)).setUnlocalizedName("leggingsOak");
-			bootsOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 3, IFA_EnumArmorMaterial.OAK, armorindex, 3, 250)).setUnlocalizedName("bootsOak");
+			helmetOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 0, IFA_EnumArmorMaterial.OAK, armorindex, 0, 200)).setUnlocalizedName("helmetOak").func_111206_d("helmetOak");
+			plateOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 1, IFA_EnumArmorMaterial.OAK, armorindex, 1, 400)).setUnlocalizedName("chestplateOak").func_111206_d("chestplateOak");
+			legsOak		= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 2, IFA_EnumArmorMaterial.OAK, armorindex, 2, 300)).setUnlocalizedName("leggingsOak").func_111206_d("leggingsOak");
+			bootsOak	= (new IFA_ItemFragileArmor(ItemIDOak - 256 + 3, IFA_EnumArmorMaterial.OAK, armorindex, 3, 250)).setUnlocalizedName("bootsOak").func_111206_d("bootsOak");
 			// レシピの追加
 			addRecipes(new ItemStack(Block.planks, 1, 0), helmetOak, plateOak, legsOak, bootsOak, false);
 			// 名称変換テーブルの追加
@@ -138,10 +137,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("spruce");
 			// アイテムの追加
-			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, IFA_EnumArmorMaterial.SPRUCE, armorindex, 0, 200)).setUnlocalizedName("helmetSpruce");
-			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, IFA_EnumArmorMaterial.SPRUCE, armorindex, 1, 400)).setUnlocalizedName("chestplateSpruce");
-			legsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 2, IFA_EnumArmorMaterial.SPRUCE, armorindex, 2, 300)).setUnlocalizedName("leggingsSpruce");
-			bootsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 3, IFA_EnumArmorMaterial.SPRUCE, armorindex, 3, 250)).setUnlocalizedName("bootsSpruce");
+			helmetSpruce	= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 0, IFA_EnumArmorMaterial.SPRUCE, armorindex, 0, 200)).setUnlocalizedName("helmetSpruce").func_111206_d("helmetSpruce");
+			plateSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 1, IFA_EnumArmorMaterial.SPRUCE, armorindex, 1, 400)).setUnlocalizedName("chestplateSpruce").func_111206_d("chestplateSpruce");
+			legsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 2, IFA_EnumArmorMaterial.SPRUCE, armorindex, 2, 300)).setUnlocalizedName("leggingsSpruce").func_111206_d("leggingsSpruce");
+			bootsSpruce		= (new IFA_ItemFragileArmor(ItemIDSpruce - 256 + 3, IFA_EnumArmorMaterial.SPRUCE, armorindex, 3, 250)).setUnlocalizedName("bootsSpruce").func_111206_d("bootsSpruce");
 			// レシピの追加
 			addRecipes(new ItemStack(Block.planks, 1, 1), helmetSpruce, plateSpruce, legsSpruce, bootsSpruce, false);
 			// 名称変換テーブルの追加
@@ -158,10 +157,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("birch");
 			// アイテムの追加
-			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, IFA_EnumArmorMaterial.BIRCH, armorindex, 0, 200)).setUnlocalizedName("helmetBirch");
-			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, IFA_EnumArmorMaterial.BIRCH, armorindex, 1, 400)).setUnlocalizedName("chestplateBirch");
-			legsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 2, IFA_EnumArmorMaterial.BIRCH, armorindex, 2, 300)).setUnlocalizedName("leggingsBirch");
-			bootsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 3, IFA_EnumArmorMaterial.BIRCH, armorindex, 3, 250)).setUnlocalizedName("bootsBirch");
+			helmetBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 0, IFA_EnumArmorMaterial.BIRCH, armorindex, 0, 200)).setUnlocalizedName("helmetBirch").func_111206_d("helmetBirch");
+			plateBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 1, IFA_EnumArmorMaterial.BIRCH, armorindex, 1, 400)).setUnlocalizedName("chestplateBirch").func_111206_d("chestplateBirch");
+			legsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 2, IFA_EnumArmorMaterial.BIRCH, armorindex, 2, 300)).setUnlocalizedName("leggingsBirch").func_111206_d("leggingsBirch");
+			bootsBirch	= (new IFA_ItemFragileArmor(ItemIDBirch - 256 + 3, IFA_EnumArmorMaterial.BIRCH, armorindex, 3, 250)).setUnlocalizedName("bootsBirch").func_111206_d("bootsBirch");
 			// レシピの追加
 			addRecipes(new ItemStack(Block.planks, 1, 2), helmetBirch, plateBirch, legsBirch, bootsBirch, false);
 			// 名称変換テーブルの追加
@@ -178,10 +177,10 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			// アーマーテクスチャの登録
 			armorindex = !isClient ? 0 : ModLoader.addArmor("jungle");
 			// アイテムの追加
-			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, IFA_EnumArmorMaterial.JUNGLE, armorindex, 0, 200)).setUnlocalizedName("helmetJungle");
-			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, IFA_EnumArmorMaterial.JUNGLE, armorindex, 1, 400)).setUnlocalizedName("chestplateJungle");
-			legsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 2, IFA_EnumArmorMaterial.JUNGLE, armorindex, 2, 300)).setUnlocalizedName("leggingsJungle");
-			bootsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 3, IFA_EnumArmorMaterial.JUNGLE, armorindex, 3, 250)).setUnlocalizedName("bootsJungle");
+			helmetJungle	= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 0, IFA_EnumArmorMaterial.JUNGLE, armorindex, 0, 200)).setUnlocalizedName("helmetJungle").func_111206_d("helmetJungle");
+			plateJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 1, IFA_EnumArmorMaterial.JUNGLE, armorindex, 1, 400)).setUnlocalizedName("chestplateJungle").func_111206_d("chestplateJungle");
+			legsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 2, IFA_EnumArmorMaterial.JUNGLE, armorindex, 2, 300)).setUnlocalizedName("leggingsJungle").func_111206_d("leggingsJungle");
+			bootsJungle		= (new IFA_ItemFragileArmor(ItemIDJungle - 256 + 3, IFA_EnumArmorMaterial.JUNGLE, armorindex, 3, 250)).setUnlocalizedName("bootsJungle").func_111206_d("bootsJungle");
 			// レシピの追加
 			addRecipes(new ItemStack(Block.planks, 1, 3), helmetJungle, plateJungle, legsJungle, bootsJungle, false);
 			// 名称変換テーブルの追加
@@ -201,8 +200,8 @@ public class mod_IFA_fragileArmor extends BaseMod {
 			Item.itemsList[69 + 256] = null;
 //			Item.itemsList[70] = null;
 //			Item.itemsList[71] = null;
-			bucketDamaged = (new IFA_ItemBucket(ItemIDBucket - 256, EnumArmorMaterial.IRON, armorindex, 0, Item.bucketEmpty)).setUnlocalizedName("bucket").setMaxStackSize(16);
-			Item.bucketEmpty = (new IFA_ItemBucket(69, EnumArmorMaterial.IRON, armorindex, 0, Item.bucketEmpty)).setUnlocalizedName("bucket").setMaxStackSize(16);
+			bucketDamaged = (new IFA_ItemBucket(ItemIDBucket - 256, EnumArmorMaterial.IRON, armorindex, 0, Item.bucketEmpty)).setUnlocalizedName("bucket").setMaxStackSize(16).func_111206_d("bucket_empty");;
+			Item.bucketEmpty = (new IFA_ItemBucket(69, EnumArmorMaterial.IRON, armorindex, 0, Item.bucketEmpty)).setUnlocalizedName("bucket").setMaxStackSize(16).func_111206_d("bucket_empty");;
 			Item.bucketWater.setContainerItem(Item.bucketEmpty);
 			Item.bucketLava.setContainerItem(Item.bucketEmpty);
 //			Item.bucketWater = (new XEU_ItemBucketProxy(70, Block.waterMoving.blockID)).setIconCoord(11, 4).setItemName("bucketWater").setContainerItem(Item.bucketEmpty).setMaxDamage(Item.bucketEmpty.getMaxDamage());
