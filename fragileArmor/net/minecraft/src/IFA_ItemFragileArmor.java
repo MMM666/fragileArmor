@@ -1,18 +1,7 @@
 package net.minecraft.src;
 
 public class IFA_ItemFragileArmor extends ItemArmor {
-/*
-	public static final int matPaper = 0;
-	public static final int matWool = 1;
-	public static final int matOak = 2;
-	public static final int matSpruce = 3;
-	public static final int matBirch = 4;
-	public static final int matJungle = 5;
-	public static final String colorNames[] = {
-		"paper", "wool", "oak", "spruce", "birch", "jungle" };
-	public static final int colorValues[] = {
-		0xefefff, 0xdfdfaf, 0xbc9862, 0x805e36, 0xd7cb8d, 0xb88764 };
-*/
+
 	/**
 	 * 内部で使用する素材の保存値、エンチャ係数や素材基準の数値には反映されない。
 	 */

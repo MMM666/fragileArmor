@@ -55,7 +55,7 @@ public class mod_IFA_fragileArmor extends BaseMod {
 
 	@Override
 	public String getVersion() {
-		return "1.6.1-1";
+		return "1.6.2-1";
 	}
 
 	@Override
@@ -237,5 +237,5 @@ public class mod_IFA_fragileArmor extends BaseMod {
 		
 		return ((IFA_ItemFragileArmor)Item.itemsList[var1]).getFuelTime(var2);
 	}
-	
+
 }
