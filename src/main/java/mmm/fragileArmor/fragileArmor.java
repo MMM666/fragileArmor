@@ -6,11 +6,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.IFuelHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 
 @Mod(
@@ -108,7 +110,7 @@ public class fragileArmor implements IFuelHandler {
 		int armorindex;
 		if (isPaper) {
 			// アーマーテクスチャの登録
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("paper");
+			armorindex = addNewArmourRendererPrefix("paper");
 			// アイテムの追加
 			helmetPaper	= (new ItemFragileArmor(EnumArmorMaterial.PAPER, armorindex, 0, 20)).setUnlocalizedName("helmetPaper").setTextureName("helmetPaper");
 			platePaper	= (new ItemFragileArmor(EnumArmorMaterial.PAPER, armorindex, 1, 40)).setUnlocalizedName("chestplatePaper").setTextureName("chestplatePaper");
@@ -121,7 +123,7 @@ public class fragileArmor implements IFuelHandler {
 		}
 		if (isWool) {
 			// アーマーテクスチャの登録
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("wool");
+			armorindex = addNewArmourRendererPrefix("wool");
 			// アイテムの追加
 			helmetWool	= (new ItemFragileArmor(EnumArmorMaterial.WOOL, armorindex, 0,  70)).setUnlocalizedName("helmetWool").setTextureName("helmetWool");
 			plateWool	= (new ItemFragileArmor(EnumArmorMaterial.WOOL, armorindex, 1, 140)).setUnlocalizedName("chestplateWool").setTextureName("chestplateWool");
@@ -135,7 +137,7 @@ public class fragileArmor implements IFuelHandler {
 		// 手抜き、MOdlloader来たら変えるかも？
 		if (isWood) {
 			// アーマーテクスチャの登録
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("oak");
+			armorindex = addNewArmourRendererPrefix("oak");
 			// アイテムの追加
 			helmetOak	= (new ItemFragileArmor(EnumArmorMaterial.OAK, armorindex, 0, 200)).setUnlocalizedName("helmetOak").setTextureName("helmetOak");
 			plateOak	= (new ItemFragileArmor(EnumArmorMaterial.OAK, armorindex, 1, 400)).setUnlocalizedName("chestplateOak").setTextureName("chestplateOak");
@@ -144,7 +146,7 @@ public class fragileArmor implements IFuelHandler {
 		}
 		if (isWood) {
 			// アーマーテクスチャの登録
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("spruce");
+			armorindex = addNewArmourRendererPrefix("spruce");
 			// アイテムの追加
 			helmetSpruce	= (new ItemFragileArmor(EnumArmorMaterial.SPRUCE, armorindex, 0, 200)).setUnlocalizedName("helmetSpruce").setTextureName("helmetSpruce");
 			plateSpruce		= (new ItemFragileArmor(EnumArmorMaterial.SPRUCE, armorindex, 1, 400)).setUnlocalizedName("chestplateSpruce").setTextureName("chestplateSpruce");
@@ -153,7 +155,7 @@ public class fragileArmor implements IFuelHandler {
 		}
 		if (isWood) {
 			// アーマーテクスチャの登録
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("birch");
+			armorindex = addNewArmourRendererPrefix("birch");
 			// アイテムの追加
 			helmetBirch	= (new ItemFragileArmor(EnumArmorMaterial.BIRCH, armorindex, 0, 200)).setUnlocalizedName("helmetBirch").setTextureName("helmetBirch");
 			plateBirch	= (new ItemFragileArmor(EnumArmorMaterial.BIRCH, armorindex, 1, 400)).setUnlocalizedName("chestplateBirch").setTextureName("chestplateBirch");
@@ -164,7 +166,7 @@ public class fragileArmor implements IFuelHandler {
 		}
 		if (isWood) {
 			// アーマーテクスチャの登録
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("jungle");
+			armorindex = addNewArmourRendererPrefix("jungle");
 			// アイテムの追加
 			helmetJungle	= (new ItemFragileArmor(EnumArmorMaterial.JUNGLE, armorindex, 0, 200)).setUnlocalizedName("helmetJungle").setTextureName("helmetJungle");
 			plateJungle		= (new ItemFragileArmor(EnumArmorMaterial.JUNGLE, armorindex, 1, 400)).setUnlocalizedName("chestplateJungle").setTextureName("chestplateJungle");
@@ -175,7 +177,7 @@ public class fragileArmor implements IFuelHandler {
 		
 		if (isBucketHelmet) {
 			// かぶれるバケツ
-			armorindex = RenderingRegistry.addNewArmourRendererPrefix("bucket");
+			armorindex = addNewArmourRendererPrefix("bucket");
 			bucket = (new ItemBucketReplace(Blocks.air)).setUnlocalizedName("bucket").setMaxStackSize(16).setTextureName("bucket_empty");
 			bucketDamaged = (new ItemBucketHelm(ArmorMaterial.IRON, armorindex, 0)).setUnlocalizedName("bucketHelm").setTextureName("bucket_empty");
 			GameRegistry.registerItem(bucket, "bucket");
@@ -230,6 +232,13 @@ public class fragileArmor implements IFuelHandler {
 			ltime = ((ItemFragileArmor)fuel.getItem()).getFuelTime(fuel.getItemDamage());
 		}
 		return ltime;
+	}
+
+	protected int addNewArmourRendererPrefix(String pName) {
+		if (FMLCommonHandler.instance().getSide() == Side.CLIENT) {
+			return RenderingRegistry.addNewArmourRendererPrefix(pName);
+		}
+		return 0;
 	}
 
 }
